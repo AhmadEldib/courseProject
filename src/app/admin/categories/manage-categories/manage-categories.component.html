@@ -1,0 +1,18 @@
+<!-- Dialog Header -->
+<h2 mat-dialog-title class="dialog-title">
+    Manage Category
+    <button mat-icon-button mat-dialog-close class="close-button">
+        <mat-icon>close</mat-icon>
+    </button>
+</h2>
+
+<!-- Dialog Content -->
+<mat-dialog-content class="dialog-content">
+    <app-manage-category-form #categoryForm></app-manage-category-form>
+</mat-dialog-content>
+
+<!-- Dialog Actions -->
+<mat-dialog-actions class="dialog-actions">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" (click)="save()">Save</button>
+</mat-dialog-actions>

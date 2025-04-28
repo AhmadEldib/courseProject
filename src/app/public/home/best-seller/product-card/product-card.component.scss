@@ -1,0 +1,44 @@
+.procut-card-hover {
+  cursor: pointer;
+  .hoverable-area {
+    background-color: #f7f7f7;
+  }
+  .hoverable-area::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .03;
+    pointer-events: none;
+  }
+}
+
+.poduct-image-container {
+  height: 250px;
+  img {
+    max-height: 100%;
+  }
+}
+
+.add-to-cart-section {
+  bottom: 20px;
+}
+
+.card-actions {
+  top: 15px;
+  right: 20px;
+}
+
+.product-name {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

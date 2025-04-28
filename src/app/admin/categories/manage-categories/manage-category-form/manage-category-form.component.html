@@ -1,0 +1,58 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="category-form">
+  <div class="form-row">
+    <div formGroupName="name" class="form-group-wrapper">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Arabic Name</mat-label>
+        <input matInput formControlName="ar" placeholder="Enter Arabic name" />
+        @if (form.get('name.ar')?.hasError('required')) {
+        <mat-error> Arabic name is required </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>English Name</mat-label>
+        <input matInput formControlName="en" placeholder="Enter English name" />
+        @if (form.get('name.en')?.hasError('required')) {
+        <mat-error> English name is required </mat-error>
+        }
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div formGroupName="description" class="form-group-wrapper">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Arabic Description</mat-label>
+        <textarea
+          matInput
+          formControlName="ar"
+          placeholder="Arabic description"
+          rows="3"
+        ></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>English Description</mat-label>
+        <textarea
+          matInput
+          formControlName="en"
+          placeholder="English description"
+          rows="3"
+        ></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Slug</mat-label>
+      <input matInput formControlName="slug" placeholder="Enter slug" />
+    </mat-form-field>
+
+    <div class="toggle-container">
+      <mat-slide-toggle formControlName="isActive" color="primary">
+        Active Status
+      </mat-slide-toggle>
+    </div>
+  </div>
+</form>

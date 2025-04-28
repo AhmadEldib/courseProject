@@ -1,0 +1,157 @@
+<div class="register-container">
+  <div class="row g-0 h-100">
+    <!-- Left side - Image -->
+    <div class="col-lg-6 d-none d-lg-block">
+      <div class="register-image h-100">
+        <img
+          src="assets/Images/register.png"
+          alt="Register"
+          class="img-fluid h-100 w-100 object-fit-cover"
+        />
+      </div>
+    </div>
+
+    <!-- Right side - Register Form -->
+    <div class="col-12 col-lg-6">
+      <div class="register-form-wrapper">
+        <div class="register-form-container">
+          <!-- Form Header -->
+          <h1 class="title mb-1">Create New Account</h1>
+          <p class="text-muted mb-3">Please enter details</p>
+
+          <!-- Register Form -->
+          <form
+            [formGroup]="form"
+            (ngSubmit)="register()"
+            class="register-form"
+          >
+            <!-- First Name Input Field -->
+            <mat-form-field appearance="outline" class="w-100 mb-3">
+              <mat-label>First Name</mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="firstName"
+                placeholder="John"
+              />
+              @if (form.get('firstName')?.hasError('required')) {
+              <mat-error>First Name is required</mat-error>
+              }
+            </mat-form-field>
+
+            <!-- Last Name Input Field -->
+            <mat-form-field appearance="outline" class="w-100 mb-3">
+              <mat-label>Last Name</mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="lastName"
+                placeholder="Doe"
+              />
+              @if (form.get('lastName')?.hasError('required')) {
+              <mat-error>Last Name is required</mat-error>
+              }
+            </mat-form-field>
+
+            <!-- Email Input Field -->
+            <mat-form-field appearance="outline" class="w-100 mb-3">
+              <mat-label>Email Address</mat-label>
+              <input
+                matInput
+                type="email"
+                formControlName="email"
+                placeholder="name@example.com"
+              />
+              @if (form.get('email')?.hasError('required')) {
+              <mat-error>Email is required</mat-error>
+              } @if (form.get('email')?.hasError('email')) {
+              <mat-error>Please enter a valid email</mat-error>
+              }
+            </mat-form-field>
+
+            <!-- Password Input Field with Toggle -->
+            <mat-form-field appearance="outline" class="w-100 mb-2">
+              <mat-label>Password</mat-label>
+              <input
+                matInput
+                [type]="hidePassword ? 'password' : 'text'"
+                formControlName="password"
+                placeholder="********"
+              />
+              <mat-icon
+                matSuffix
+                type="button"
+                (click)="togglePasswordVisibility($event)"
+                [attr.aria-label]="'Toggle password visibility'"
+              >
+                {{ hidePassword ? "visibility_off" : "visibility" }}
+              </mat-icon>
+              @if (form.get('password')?.hasError('required')) {
+              <mat-error>Password is required</mat-error>
+              } @if (form.get('password')?.hasError('minlength')) {
+              <mat-error>Password must be at least 8 characters long</mat-error>
+              }
+            </mat-form-field>
+
+            <!-- Confirm Password Input Field with Toggle -->
+            <mat-form-field appearance="outline" class="w-100 mb-2">
+              <mat-label>Confirm Password</mat-label>
+              <input
+                matInput
+                [type]="hideConfirmPassword ? 'password' : 'text'"
+                formControlName="confirmPassword"
+                placeholder="********"
+              />
+              <mat-icon
+                matSuffix
+                type="button"
+                (click)="toggleConfirmPasswordVisibility($event)"
+                [attr.aria-label]="'Toggle password visibility'"
+              >
+                {{ hideConfirmPassword ? "visibility_off" : "visibility" }}
+              </mat-icon>
+              @if (form.get('confirmPassword')?.hasError('required')) {
+              <mat-error>Confirm Password is required</mat-error>
+              }
+              @if (form.get('confirmPassword')?.hasError('mustMatch')) {
+              <mat-error>Passwords must match</mat-error>
+              }
+              <!-- } @if (form.hasError('passwordMismatch')) {
+              <mat-error>Passwords do not match</mat-error>
+              } -->
+
+            </mat-form-field>
+
+            <!-- Terms and Conditions -->
+            <div class="form-check mb-3">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="terms"
+                formControlName="terms"
+              />
+              <label class="form-check-label" for="terms">
+                I agree to <strong>terms & conditions</strong>
+              </label>
+              @if (form.get('terms')?.hasError('required') &&
+              form.get('terms')?.touched) {
+              <div class="text-danger">
+                You must agree to the terms and conditions
+              </div>
+              }
+            </div>
+
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              class="btn btn-dark w-100 register-btn"
+              [disabled]="!form.valid"
+            >
+              Register
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

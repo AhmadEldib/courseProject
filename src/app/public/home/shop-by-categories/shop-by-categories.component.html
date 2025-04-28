@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <div>
+      <h1 class="fw-bold mb-0 shop-by-categories">Shop by Categories</h1>
+    </div>
+    <div class="navigations-btns">
+      <button class="btn pervious-btn px-3 me-3" type="button">
+        <i class="fa-solid fa-left-long"></i>
+      </button>
+      <button class="btn btn-dark px-3" type="button">
+        <i class="fa-solid fa-right-long"></i>
+      </button>
+    </div>
+  </div>
+  <div class="row category-container mt-5">
+    @for(category of categoriesList; track category) {
+      <div class="col-md-3 col-6">
+        <app-category-card [category]="category" />
+      </div>
+    }
+  </div>
+</div>

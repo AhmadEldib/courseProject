@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h1 class="mb-0 title fw-bold">Our Bestseller</h1>
+    </div>
+  </div>
+  <div class="row mt-5">
+    @for (prod of products; track prod) {
+      <div class="col-md-3 col-6">
+        <app-product-card [product]="prod" />
+      </div>
+    }
+  </div>
+</div>

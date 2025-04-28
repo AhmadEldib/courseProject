@@ -1,0 +1,55 @@
+.footer {
+  background-color: #111;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  li {
+    margin: 10px 0;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.payment-image-container {
+  height: 22px;
+  width: 35px;
+  border-radius: 3px;
+}
+
+.footer-subscribe input {
+  border-radius: 5px 0 0 5px;
+}
+
+.footer-subscribe button {
+  background-color: #555;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+}
+
+.footer-social {
+  a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.25rem
+  }
+  a:hover {
+    color: #ddd;
+  }
+}

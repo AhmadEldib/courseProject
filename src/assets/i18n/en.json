@@ -1,0 +1,19 @@
+{
+    "login": {
+        "title": "Welcome"
+    },
+    "header": {
+        "home": "Home",
+        "shop": "Shop",
+        "ourStory": "Our Story",
+        "blog": "Blog",
+        "contactUs": "Contact Us"
+    },
+    "admin": {
+        "panal": "Admin Panel",
+        "products": "Products",
+        "categories": "Categories",
+        "addProduct": "Add Product",
+        "addCategory": "Add Category"
+    }
+}

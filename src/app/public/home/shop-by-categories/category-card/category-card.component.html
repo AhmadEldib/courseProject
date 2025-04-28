@@ -1,0 +1,8 @@
+@if (category) {
+  <div class="position-relative rounded overflow-hidden d-flex justify-content-center category-card p-4">
+    <img [src]="category.imageUrl" alt="img" class="img-fluid category-image" />
+    <div class="d-flex justify-content-center">
+      <div class="position-absolute px-4 py-2 rounded fw-bold text-center category-title">{{category.name}}</div>
+    </div>
+  </div>
+}

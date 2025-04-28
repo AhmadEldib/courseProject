@@ -3,6 +3,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./src",
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
@@ -16,7 +17,16 @@
     "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
-    "module": "ES2022"
+    "module": "ES2022",
+    "paths": {
+      "@app/shared": ["app/Shared/shared.module.ts"],
+      "@app/shared/services": ["app/Shared/services"],
+      "@app/Shared/enums": ["app/Shared/enums"],
+      "@app/Core/services": ["app/Core/services"],
+      "@envireonments": ["environments"],
+      "@app/admin/category": ["app/admin/category"],
+      "@app/Shared/models/interfaces": ["app/Shared/models/interfaces"],
+    },
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

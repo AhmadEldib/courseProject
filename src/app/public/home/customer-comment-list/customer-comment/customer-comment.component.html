@@ -1,0 +1,21 @@
+@if (customerComment) {
+<div class="border rounded p-3 comment-card">
+  @for (star of stars; track star) {
+  <span class="stars">
+    <i class="fa-solid fa-star"></i>
+  </span>
+  }
+  <div class="text-muted my-2 comment">
+    It is a long established fact that a reader will be distracted by the
+    readable content of a page when looking at its layout. The point of
+    using Lorem Ipsum.
+  </div>
+  <div class="d-flex align-items-center">
+    <img [src]="customerComment.imageUrl" [alt]="customerComment.name" class="img-fluid rounded-circle user-image" />
+    <div class="d-flex flex-column">
+      <div class="fw-bold mb-1">{{customerComment.name}}</div>
+      <span class="text-muted">{{customerComment.position}}</span>
+    </div>
+  </div>
+</div>
+}

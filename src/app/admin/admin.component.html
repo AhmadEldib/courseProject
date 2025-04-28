@@ -1,0 +1,24 @@
+<mat-toolbar color="primary" class="app-toolbar">
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div>{{ 'admin.panal' | translate}}</div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-drawer-container class="app-drawer-container m-0">
+    <mat-drawer mode="push" [opened]="false" #drawer>
+        <mat-nav-list>
+            @for (item of menuItems(); track item.url) {
+                <a [routerLink]="item.url" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link" class="text-decoration-none">
+                    <mat-list-item>
+                        <i [class] = "item.icon"></i>
+                        <span class="ps-2"> {{item.text | translate}} </span>
+                    </mat-list-item>
+                </a>
+            }
+        </mat-nav-list>
+    </mat-drawer>
+    <router-outlet/>
+</mat-drawer-container>

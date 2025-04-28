@@ -1,0 +1,72 @@
+.dialog-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 16px 24px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 20px;
+  font-weight: 500;
+
+  .close-button {
+    margin-right: -12px;
+  }
+}
+
+.dialog-content {
+  padding: 0;
+  min-height: 80px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.category-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+::ng-deep {
+  .mat-mdc-dialog-panel {
+    --mat-dialog-container-max-width: 900px !important;
+    --mat-dialog-container-min-width: 600px !important;
+    width: 700px !important;
+  }
+
+  .mat-mdc-dialog-surface {
+    border-radius: 4px;
+  }
+
+  .mat-mdc-dialog-content {
+    display: block;
+    background-color: #edf0f4;
+    padding: 0;
+    max-width: 100%;
+
+    app-manage-category-form {
+      display: block;
+      width: 100%;
+      padding: 0 24px;
+    }
+  }
+
+  mat-dialog-actions {
+    padding: 16px 24px;
+    margin: 0;
+    border-top: 1px solid #dee2e6;
+
+    .mat-mdc-raised-button {
+      border-radius: 4px; /* Small radius for the button */
+      --mdc-protected-button-container-color: #3f51b5; /* Button background color */
+      --mdc-protected-button-label-text-color: white; /* Button text color */
+      &:hover {
+        background-color: #303f9f; /* Darker shade for hover effect */
+      }
+      .mdc-button__label {
+        color: white; /* White text color for the button */
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<header class="d-flex justify-content-between align-items-center">
+  <div class="fw-bold logo">Krist</div>
+  <nav>
+    <a href="/">{{'header.home' | translate}}</a>
+    <div class="shop-menu" (mouseenter)="toggleMenu(true)" (mouseleave)="toggleMenu(false)">
+      <a href="#">{{'header.shop' | translate}} <i class="fa-solid fa-angle-down"></i></a>
+      <app-mega-menu [showMenu] = "showMenu"/>
+    </div>
+    <a href="/story">{{'header.ourStory' | translate}}</a>
+    <a href="/blog">{{'header.blog' | translate}}</a>
+    <a href="/contact">{{'header.contactUs' | translate}}</a>
+  </nav>
+  <div class="d-flex align-items-center justify-content-between">
+    <span class="cursor-pointer"><i class="fa-solid fa-magnifying-glass"></i></span>
+    <span class="px-3 cursor-pointer"><i class="fa-regular fa-heart"></i></span>
+    <span class="ps-2 pe-3 cursor-pointer"><i class="fa-solid fa-store"></i></span>
+    <span class="pe-3 cursor-pointer" [matMenuTriggerFor]="languageMenu">
+      <i class="fa-solid fa-globe"></i>
+    </span>
+    
+    <mat-menu #languageMenu="matMenu">
+      <button mat-menu-item (click)="changeLang('en')">
+        English
+        @if (isCurrentLang('en')) {
+          <i class="fa-solid fa-check ms-2"></i>
+        }
+      </button>
+      <button mat-menu-item (click)="changeLang('ar')">
+        Arabic
+        @if (isCurrentLang('ar')) {
+          <i class="fa-solid fa-check ms-2"></i>
+        }
+      </button>
+    </mat-menu>
+    <button class="btn btn-dark btn-style" (click)="navigateToLoginPage()">Login</button>
+  </div>
+</header>

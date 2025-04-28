@@ -1,0 +1,38 @@
+.mega-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 1000;
+  width: 40vw;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+}
+
+.mega-menu.show {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu-column {
+  flex: 1;
+  padding: 1rem;
+}
+
+.menu-column h4 {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.menu-column a {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: black;
+  text-decoration: none;
+}
+
+.menu-column a:hover {
+  color: #007BFF;
+}

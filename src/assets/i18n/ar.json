@@ -1,0 +1,19 @@
+{
+    "login": {
+        "title": "مرحبا"
+    },
+    "header": {
+        "home": "الرئيسية",
+        "shop": "المتجر",
+        "ourStory": "قصتنا",
+        "blog": "مدونة",
+        "contactUs": "اتصل بنا"
+    },
+    "admin": {
+        "panal": "لوحة التحكم",
+        "products": "المنتجات",
+        "categories": "الفئات",
+        "addProduct": "إضافة منتج",
+        "addCategory": "إضافة فئة"
+    }
+}
